@@ -11,7 +11,7 @@ dir_count=$(find "$dir" -mindepth 1 -type d | wc -l)
 echo "DIRS: $dir_count"
 
 echo "LARGEST:"
-find "$dir" -type f -printf '%s %p\n' | sort -nr | head -3 | sed "s|^$dir/||"
+find "$dir" -type f -printf '%s %P\n' | sort -nr | head -3
 
 echo "EXECUTABLE:"
 find "$dir" -type f -perm -u+x -printf '%p\n' | sed "s|^$dir/||" | sort
